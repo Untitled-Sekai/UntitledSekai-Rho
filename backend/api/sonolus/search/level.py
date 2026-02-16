@@ -1,0 +1,62 @@
+from sonolus_models import ServerForm, ServerToggleOption, ServerTextOption, ServerSliderOption, SonolusText, SonolusIcon
+
+options = [
+        ServerTextOption(
+        query='keywords',
+        name=SonolusText.KEYWORDS,
+        required=False,
+        type='text',
+        def_='',
+        placeholder=SonolusText.KEYWORDS_PLACEHOLDER,
+        limit=100,
+        shortcuts=[]
+    ),
+    ServerTextOption(
+        query='title',
+        name=SonolusText.TITLE,
+        required=False,
+        type='text',
+        def_='',
+        placeholder=SonolusText.TITLE_PLACEHOLDER,
+        limit=100,
+        shortcuts=[]
+    ),
+    ServerTextOption(
+        query='author',
+        name=SonolusText.AUTHOR,
+        required=False,
+        type='text',
+        def_='',
+        placeholder=SonolusText.AUTHOR_PLACEHOLDER,
+        limit=100,
+        shortcuts=[]
+    ),
+    ServerSliderOption(
+        query='minrating',
+        name=SonolusText.RATING_MINIMUM,
+        required=False,
+        type='slider',
+        def_=1,
+        min=1,
+        max=50,
+        step=1
+    ),
+    ServerSliderOption(
+        query='maxrating',
+        name=SonolusText.RATING_MAXIMUM,
+        required=False,
+        type='slider',
+        def_=50,
+        min=1,
+        max=50,
+        step=1
+    ),
+]
+
+level_search = ServerForm(
+    type='advanced',
+    title=SonolusText.ADVANCED,
+    icon=SonolusIcon.Advanced,
+    requireConfirmation=False,
+    options=options
+)
