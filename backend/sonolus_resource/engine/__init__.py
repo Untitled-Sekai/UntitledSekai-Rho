@@ -1,0 +1,1 @@
+from pjsekai_extended import create_pjsekai_extended
