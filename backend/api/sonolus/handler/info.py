@@ -10,6 +10,7 @@ from sonolus_models import (
     SonolusText
 )
 from ..config import config_option
+from api.sonolus.utils import get_profile
 
 # ---------------------------------------------------------------
 
@@ -18,9 +19,15 @@ async def server_info(ctx: SonolusContext) -> SonolusServerInfo:
     """
     GET /sonolus/info
     """
+    profile = get_profile(ctx, sonolus)
+    description="UntitledSekaiρ"
+
+    if profile:
+        description = f"UntitledSekaiρ\n\n{profile.name}#{profile.handle}"
+
     return SonolusServerInfo(
         title="UntitledSekaiρ",
-        description="UntitledSekaiρ",
+        description=description,
         buttons=[
             ServerInfoAuthenticationButton(type="authentication"),
             ServerInfoItemButton(
