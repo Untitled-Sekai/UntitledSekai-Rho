@@ -10,3 +10,7 @@ sonolus.load([
 ])
 sonolus.add(resource_file_path)
 app = sonolus.app
+
+if __name__ == "__main__":
+    # サーバー起動、基本的にはgunicornなどで起動することが多いと思いますが、開発中はこの方法で起動できます。
+    sonolus.run()

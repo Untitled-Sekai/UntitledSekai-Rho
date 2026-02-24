@@ -36,7 +36,7 @@ async def level_list(ctx: SonolusContext, query) -> ServerItemList:
 
 # ---------------------------------------------------------------
 
-@sonolus.level.details(ServerItemDetails)
+@sonolus.level.detail(ServerItemDetails)
 async def level_details(ctx: SonolusContext, name: str) -> ServerItemDetails:
     """
     GET /sonolus/levels/{name}
