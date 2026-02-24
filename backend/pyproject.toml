@@ -7,7 +7,7 @@ requires-python = ">=3.13"
 dependencies = [
     "celery>=5.6.2",
     "redis>=7.1.1",
-    "sonolus-fastapi>=0.5.5",
-    "sonolus-models>=0.2.6.4",
+    "sonolus-fastapi==0.5.6.3",
+    "sonolus-models==0.2.6.6",
     "sqlalchemy>=2.0.46",
 ]

@@ -60,8 +60,8 @@ dependencies = [
 requires-dist = [
     { name = "celery", specifier = ">=5.6.2" },
     { name = "redis", specifier = ">=7.1.1" },
-    { name = "sonolus-fastapi", specifier = ">=0.5.5" },
-    { name = "sonolus-models", specifier = ">=0.2.6.4" },
+    { name = "sonolus-fastapi", specifier = "==0.5.6.3" },
+    { name = "sonolus-models", specifier = "==0.2.6.6" },
     { name = "sqlalchemy", specifier = ">=2.0.46" },
 ]
 
@@ -750,7 +750,7 @@ wheels = [
 
 [[package]]
 name = "sonolus-fastapi"
-version = "0.5.5"
+version = "0.5.6.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "build" },
@@ -761,21 +761,21 @@ dependencies = [
     { name = "twine" },
     { name = "uvicorn" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/01/5d/46f92ae4d77d85310f84bb62a73ee41501ca6bb526f12f26a3c30bd6f7ce/sonolus_fastapi-0.5.5.tar.gz", hash = "sha256:d0cb798d2b242e26a1e0aa36e5b144cbb7e909abcd2dd59f10c76df0bcb404aa", size = 148222, upload-time = "2026-02-12T17:05:59.048Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/e4/5c/7c2f95825a580a1e5a2f0d9a9ccca7f4adc1e63bc8ac30bf9c02a4745e4b/sonolus_fastapi-0.5.6.3.tar.gz", hash = "sha256:372fc8247764b143f809dcb3a7cdf1dc7a8c15eb99d710e6859af8b4efecbc5f", size = 149159, upload-time = "2026-02-21T08:35:31.505Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/0d/de/1b53ff59628c4f2253fd4083ecc0dad00add3ef4003bc20dede9becef601/sonolus_fastapi-0.5.5-py3-none-any.whl", hash = "sha256:7173232fd497e3c59302573150562b7374ab35326b5d4f29547eca2a0cb77b9f", size = 168839, upload-time = "2026-02-12T17:06:01.117Z" },
+    { url = "https://files.pythonhosted.org/packages/63/cb/61162f11ca9c8e27005fdbc6266e6da7d077291b53e35909a5a88b297b84/sonolus_fastapi-0.5.6.3-py3-none-any.whl", hash = "sha256:a1997b1680b34b985ec23c211d84fce41f20fe2c8161be2d720da4c58c204f7e", size = 170046, upload-time = "2026-02-21T08:35:33.277Z" },
 ]
 
 [[package]]
 name = "sonolus-models"
-version = "0.2.6.4"
+version = "0.2.6.6"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pydantic" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/db/ec/7718593dc95fe0420dd069d90e2aeec2433d1cf469c1fea321e57278e9f8/sonolus_models-0.2.6.4.tar.gz", hash = "sha256:6765d8752c4e977762a63cfdc1d72f7268da52c898cbfe879636bfe6da8d7835", size = 15399, upload-time = "2026-02-12T14:57:16.125Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/f0/34/af88906a28792fbf30ad67ff31070770f3e2cb4dc6fe67aea38b613e99d4/sonolus_models-0.2.6.6.tar.gz", hash = "sha256:1f90037fb7243f2d1e782c968b86bad7dc6ee9ebdca7e083520a4dd7cd910485", size = 15513, upload-time = "2026-02-22T04:09:16.128Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/73/8d/1c5aea3756d3f158c1141d41672fd66559a094457c5a69209a937f97797f/sonolus_models-0.2.6.4-py3-none-any.whl", hash = "sha256:72dbeb4d6ccc109e9d8180d80b549ad4252f83e36b3900ef896dcfbdbdd990cb", size = 30439, upload-time = "2026-02-12T14:57:15.085Z" },
+    { url = "https://files.pythonhosted.org/packages/6f/22/6b8693828d4bb70be8cfef7072b1f07e6c94b9325adf1865807ea4dd16ef/sonolus_models-0.2.6.6-py3-none-any.whl", hash = "sha256:dd411f6793ec4f04a46b753227034d834d1aac5f9172c6dd761b90563bb5a766", size = 31186, upload-time = "2026-02-22T04:09:14.642Z" },
 ]
 
 [[package]]
