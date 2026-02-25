@@ -52,6 +52,7 @@ class Level(Base):
     title: Mapped[str] = mapped_column(String, nullable=False)
     author_handle: Mapped[str] = mapped_column(String, nullable=False)
     author_name: Mapped[str] = mapped_column(String, nullable=False)
+    description: Mapped[str] = mapped_column(String, nullable=False)
 
     rating: Mapped[float] = mapped_column(Float, nullable=True)
 
@@ -67,7 +68,26 @@ class Level_Like(Base):
         UniqueConstraint('level_name', 'liked_by_handle', name='uq_level_like'),
     )
 
-    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    id: Mapped[str] = mapped_column(String, primary_key=True, autoincrement=True)
     level_name: Mapped[str] = mapped_column(String, ForeignKey('levels.name'), nullable=False)
     liked_by_handle: Mapped[str] = mapped_column(String, nullable=False)
     liked_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc))
+
+class Level_Readerboard(Base):
+    __tablename__ = 'level_readerboards'
+
+    id: Mapped[str] = mapped_column(String, primary_key=True, autoincrement=True)
+    level_name: Mapped[str] = mapped_column(String, ForeignKey('levels.name'), nullable=False)
+    player_handle: Mapped[str] = mapped_column(String, nullable=False)
+
+    subtitle: Mapped[str] = mapped_column(String, nullable=False)
+
+    score: Mapped[int] = mapped_column(Integer, nullable=False)
+    accuracy_score: Mapped[int] = mapped_column(Integer, nullable=False)
+    rank: Mapped[str] = mapped_column(String, nullable=False)
+    perfect_count: Mapped[int] = mapped_column(Integer, nullable=False)
+    great_count: Mapped[int] = mapped_column(Integer, nullable=False)
+    good_count: Mapped[int] = mapped_column(Integer, nullable=False)
+    miss_count: Mapped[int] = mapped_column(Integer, nullable=False)
+
+    cleared_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc))

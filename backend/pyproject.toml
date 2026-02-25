@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "celery>=5.6.2",
+    "pyyaml>=6.0.3",
     "redis>=7.1.1",
     "sonolus-fastapi==0.5.6.3",
     "sonolus-models==0.2.6.6",
