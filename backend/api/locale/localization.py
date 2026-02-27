@@ -5,7 +5,8 @@ from typing import Any, Optional
 
 class Language(Enum):
     """
-    追加したいときは、新しく追加してね。localizationディレクトリにもymlを新しくいれてね
+    追加したいときは、新しく追加してね。
+    localizationディレクトリにもymlを新しくいれてね
     """
     JAPANESE = 'ja'
     ENGLISH = 'en'
