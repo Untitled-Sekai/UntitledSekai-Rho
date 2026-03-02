@@ -15,7 +15,7 @@ db_url = f"sqlite:///{db_file.as_posix()}" # あとでPostgreSQLにします
 
 sonolus = Sonolus(
     address="",
-    port=8080,
+    port=8090,
     dev=True,
     session_store=MemorySessionStore(),
     backend=StorageBackend.DATABASE,

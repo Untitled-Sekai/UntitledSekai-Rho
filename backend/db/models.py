@@ -68,7 +68,7 @@ class Level_Like(Base):
         UniqueConstraint('level_name', 'liked_by_handle', name='uq_level_like'),
     )
 
-    id: Mapped[str] = mapped_column(String, primary_key=True, autoincrement=True)
+    id: Mapped[str] = mapped_column(String, primary_key=True)
     level_name: Mapped[str] = mapped_column(String, ForeignKey('levels.name'), nullable=False)
     liked_by_handle: Mapped[str] = mapped_column(String, nullable=False)
     liked_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc))
@@ -76,7 +76,8 @@ class Level_Like(Base):
 class Level_Readerboard(Base):
     __tablename__ = 'level_readerboards'
 
-    id: Mapped[str] = mapped_column(String, primary_key=True, autoincrement=True)
+    id: Mapped[str] = mapped_column(String, primary_key=True)
+    hash: Mapped[str] = mapped_column(String, nullable=False)
     level_name: Mapped[str] = mapped_column(String, ForeignKey('levels.name'), nullable=False)
     player_handle: Mapped[str] = mapped_column(String, nullable=False)
 

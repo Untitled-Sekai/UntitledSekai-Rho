@@ -10,6 +10,7 @@ from sonolus_models import (
 )
 from api.sonolus.utils.db import get_level_by_name, get_search_levels_return_names
 from db.session import get_db_session
+from sqlalchemy.orm import Session
 
 # --------------------------------------------------------------- 
 
@@ -70,6 +71,7 @@ async def level_details(ctx: SonolusContext, name: str) -> ServerItemDetails:
     GET /sonolus/levels/{name}
     """    
     with get_db_session() as db:
+        db: Session
         level = get_level_by_name(db=db, name=name)
         if level is None:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Level not found")

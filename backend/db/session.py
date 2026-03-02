@@ -26,7 +26,7 @@ def get_db() -> Generator[Session, None, None]:
         db.close()
 
 @contextmanager
-def get_db_session() -> Generator:
+def get_db_session() -> Generator[Session, None, None]:
     gen = get_db()
     session = next(gen)
     try:

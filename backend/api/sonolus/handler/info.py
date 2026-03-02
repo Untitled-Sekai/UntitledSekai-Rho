@@ -11,6 +11,7 @@ from sonolus_models import (
 )
 from ..config import config_option
 from api.sonolus.utils import get_profile
+from api.locale import Localization, Language
 
 # ---------------------------------------------------------------
 
@@ -19,14 +20,23 @@ async def server_info(ctx: SonolusContext) -> SonolusServerInfo:
     """
     GET /sonolus/info
     """
+    try:
+        lang = Language(ctx.localization)
+        localization = Localization(lang=lang)
+    except ValueError:
+        lang = Language.ENGLISH
+        localization = Localization(lang=lang)
+    
     profile = get_profile(ctx, sonolus)
-    description="UntitledSekaiρ"
+    
+    title = localization.get("sonolus.title", "UntitledSekaiρ")
+    description = title
 
     if profile:
-        description = f"UntitledSekaiρ\n\n{profile.name}#{profile.handle}"
+        description = f"{title}\n\n{profile.name}#{profile.handle}"
 
     return SonolusServerInfo(
-        title="UntitledSekaiρ",
+        title=title,
         description=description,
         buttons=[
             ServerInfoAuthenticationButton(type="authentication"),
@@ -42,7 +52,6 @@ async def server_info(ctx: SonolusContext) -> SonolusServerInfo:
             ServerInfoItemButton(type='skin'),
             ServerInfoItemButton(type='particle'),
             ServerInfoItemButton(type='engine'),
-            ServerInfoItemButton(type='user'),
             ServerInfoConfigurationButton(type='configuration'),
         ],
         configuration=SonolusConfiguration(

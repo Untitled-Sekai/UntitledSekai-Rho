@@ -1,2 +1,2 @@
 from .level import *
-from .leaderboard import *
+from .leaderboard.leaderboard import *
