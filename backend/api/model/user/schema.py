@@ -3,7 +3,7 @@ from sonolus_models import ServiceUserProfile
 from typing import Optional
 from datetime import datetime
 
-class User(BaseModel):
+class UserSchema(BaseModel):
     id: int
     name: str
     profile: Optional[ServiceUserProfile]
