@@ -2,4 +2,8 @@ sonolus:
   title: "UntitledSekaiρ"
   login: "Login"
   leaderboard:
-    grade-judgment-accuracy: "Grade Judgement Accuracy"
+    grade-judgment-accuracy: "Grade + Judgement + Accuracy Score"
+    grade-accuracy: "Grade + Accuracy Score"
+    judgment-accuracy: "Judgement + Accuracy Score"
+    arcade-accuracy: "Arcade + Accuracy Score"
+    accuracy: "Accuracy Score"
